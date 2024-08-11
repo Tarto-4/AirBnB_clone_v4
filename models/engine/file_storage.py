@@ -11,7 +11,6 @@ from models.review import Review
 from models.state import State
 from models.user import User
 from models.engine.db_storage import DBStorage
-from models.engine.file_storage import FileStorage
 from os import getenv
 
 storage_t = getenv('HBNB_TYPE_STORAGE')
@@ -104,3 +103,7 @@ class FileStorage:
             if isinstance(obj, cls):
                 count += 1
         return count
+
+    def some_method(self):
+        from models.engine.db_storage import DBStorage
+        # Use DBStorage here

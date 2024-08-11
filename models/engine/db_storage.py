@@ -95,6 +95,10 @@ class DBStorage:
             cls = classes.get(cls)
         return self.__session.query(cls).count()
 
+    def some_method(self):
+        from models.engine.file_storage import FileStorage
+        # Use FileStorage here
+
 storage_t = getenv('HBNB_TYPE_STORAGE')
 
 if storage_t == 'db':
